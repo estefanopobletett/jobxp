@@ -1,0 +1,337 @@
+:root {
+    --linkedin-blue: #0a66c2;
+    --linkedin-hover-blue: #004182;
+    --linkedin-bg: #f4f2ee;
+    --linkedin-card-bg: #ffffff;
+    --linkedin-text-primary: rgba(0, 0, 0, 0.9);
+    --linkedin-text-secondary: rgba(0, 0, 0, 0.6);
+    --linkedin-border: #e0e0e0;
+    --linkedin-green: #057642;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+    background-color: var(--linkedin-bg);
+    color: var(--linkedin-text-primary);
+    line-height: 1.5;
+}
+
+/* Header Sticky */
+header {
+    background-color: var(--linkedin-card-bg);
+    border-bottom: 1px solid var(--linkedin-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 0 16px;
+}
+
+.nav-container {
+    max-width: 1128px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 56px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.logo-box {
+    background-color: var(--linkedin-blue);
+    color: white;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 18px;
+}
+
+.brand-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--linkedin-blue);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 16px;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: var(--linkedin-text-secondary);
+    font-size: 13px;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-item a:hover {
+    color: var(--linkedin-blue);
+}
+
+/* Botón Idioma Dinámico */
+.lang-btn {
+    background-color: transparent;
+    border: 1.5px solid var(--linkedin-blue);
+    color: var(--linkedin-blue);
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.lang-btn:hover {
+    background-color: #e8f0fe;
+}
+
+/* Layout Grid Responsive */
+.main-container {
+    max-width: 1128px;
+    margin: 20px auto;
+    padding: 0 16px;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 850px) {
+    .main-container {
+        grid-template-columns: 1fr;
+    }
+    .nav-menu {
+        display: none;
+    }
+}
+
+/* Tarjetas */
+.card {
+    background-color: var(--linkedin-card-bg);
+    border: 1px solid var(--linkedin-border);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.hero-card {
+    padding: 0;
+    overflow: hidden;
+}
+
+.card-header {
+    border-bottom: 1px solid var(--linkedin-border);
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--linkedin-text-primary);
+}
+
+.card-subtitle {
+    font-size: 12px;
+    color: var(--linkedin-text-secondary);
+    margin-bottom: 10px;
+}
+
+.section-text {
+    margin-top: 10px;
+}
+
+.section-subtitle {
+    font-size: 13px;
+    color: var(--linkedin-text-secondary);
+}
+
+/* Portada / Hero */
+.hero-banner {
+    background: linear-gradient(135deg, #0a66c2 0%, #004182 100%);
+    color: white;
+    border-radius: 8px 8px 0 0;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.hero-banner h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.hero-img {
+    width: 100%;
+    max-height: 280px;
+    object-fit: cover;
+    border-radius: 0 0 8px 8px;
+}
+
+/* Badges e Insignias */
+.badge {
+    display: inline-block;
+    background-color: #e8f0fe;
+    color: var(--linkedin-blue);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 6px;
+    margin-bottom: 6px;
+}
+
+.badge-ods {
+    background-color: #e6f4ea;
+    color: var(--linkedin-green);
+}
+
+/* Listas */
+ul.list-styled {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul.list-styled li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+ul.list-styled li::before {
+    content: "•";
+    color: var(--linkedin-blue);
+    font-weight: bold;
+    font-size: 20px;
+    position: absolute;
+    left: 4px;
+    top: -3px;
+}
+
+.list-margin {
+    margin-top: 8px;
+}
+
+/* Tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    font-size: 13px;
+}
+
+th, td {
+    border: 1px solid var(--linkedin-border);
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+/* Media & Galería */
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.media-grid img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid var(--linkedin-border);
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-top: 12px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Equipo */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.team-member {
+    border: 1px solid var(--linkedin-border);
+    border-radius: 6px;
+    padding: 12px;
+    text-align: center;
+    background-color: #fafafa;
+}
+
+.team-member h4 {
+    font-size: 14px;
+    color: var(--linkedin-text-primary);
+}
+
+.team-member p {
+    font-size: 12px;
+    color: var(--linkedin-text-secondary);
+}
+
+/* Botones de Enlace */
+.btn-link {
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 16px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 8px;
+    transition: background-color 0.2s;
+}
+
+.btn-github {
+    background-color: var(--linkedin-blue);
+}
+
+.btn-github:hover {
+    background-color: var(--linkedin-hover-blue);
+}
+
+.btn-pages {
+    background-color: var(--linkedin-green);
+}
+
+.btn-pages:hover {
+    background-color: #034e2b;
+}
