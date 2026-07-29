@@ -1,12 +1,17 @@
 :root {
     --linkedin-blue: #0a66c2;
     --linkedin-hover-blue: #004182;
+    --linkedin-light-blue: #e8f0fe;
     --linkedin-bg: #f4f2ee;
     --linkedin-card-bg: #ffffff;
-    --linkedin-text-primary: rgba(0, 0, 0, 0.9);
-    --linkedin-text-secondary: rgba(0, 0, 0, 0.6);
+    --linkedin-text-primary: #191919;
+    --linkedin-text-secondary: #666666;
     --linkedin-border: #e0e0e0;
     --linkedin-green: #057642;
+    --linkedin-green-hover: #034e2b;
+    --shadow-soft: 0 0 0 1px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+    --shadow-hover: 0 12px 24px -6px rgba(10, 102, 194, 0.12), 0 4px 12px rgba(0,0,0,0.08);
+    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 * {
@@ -19,10 +24,10 @@
 body {
     background-color: var(--linkedin-bg);
     color: var(--linkedin-text-primary);
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
-/* Header Sticky */
+/* Header Sticky con Sombra Elevada en Hover */
 header {
     background-color: var(--linkedin-card-bg);
     border-bottom: 1px solid var(--linkedin-border);
@@ -30,6 +35,11 @@ header {
     top: 0;
     z-index: 100;
     padding: 0 16px;
+    transition: var(--transition-smooth);
+}
+
+header:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .nav-container {
@@ -41,11 +51,17 @@ header {
     height: 56px;
 }
 
+/* Logo con Micro-animación */
 .logo-area {
     display: flex;
     align-items: center;
     gap: 8px;
     text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.logo-area:hover {
+    transform: scale(1.03);
 }
 
 .logo-box {
@@ -55,6 +71,12 @@ header {
     padding: 4px 8px;
     border-radius: 4px;
     font-size: 18px;
+    transition: var(--transition-smooth);
+}
+
+.logo-area:hover .logo-box {
+    background-color: var(--linkedin-hover-blue);
+    box-shadow: 0 2px 8px rgba(10, 102, 194, 0.3);
 }
 
 .brand-name {
@@ -63,9 +85,10 @@ header {
     color: var(--linkedin-blue);
 }
 
+/* Menú de Navegación con Hover de Línea Inferior Animada */
 .nav-menu {
     display: flex;
-    gap: 16px;
+    gap: 20px;
     list-style: none;
     align-items: center;
 }
@@ -73,40 +96,64 @@ header {
 .nav-item a {
     text-decoration: none;
     color: var(--linkedin-text-secondary);
-    font-size: 13px;
+    font-size: 13.5px;
     font-weight: 500;
-    transition: color 0.2s;
+    position: relative;
+    padding: 6px 0;
+    transition: color 0.2s ease;
+}
+
+.nav-item a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--linkedin-blue);
+    transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .nav-item a:hover {
     color: var(--linkedin-blue);
 }
 
-/* Botón Idioma Dinámico */
+.nav-item a:hover::after {
+    width: 100%;
+}
+
+/* Botón de Idioma Dinámico Moderno */
 .lang-btn {
     background-color: transparent;
     border: 1.5px solid var(--linkedin-blue);
     color: var(--linkedin-blue);
-    padding: 4px 12px;
-    border-radius: 16px;
+    padding: 6px 14px;
+    border-radius: 20px;
     font-weight: 600;
     font-size: 13px;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: var(--transition-smooth);
 }
 
 .lang-btn:hover {
-    background-color: #e8f0fe;
+    background-color: var(--linkedin-blue);
+    color: white;
+    box-shadow: 0 4px 10px rgba(10, 102, 194, 0.25);
+    transform: translateY(-1px);
+}
+
+.lang-btn:active {
+    transform: translateY(0);
 }
 
 /* Layout Grid Responsive */
 .main-container {
     max-width: 1128px;
-    margin: 20px auto;
+    margin: 24px auto;
     padding: 0 16px;
     display: grid;
     grid-template-columns: 260px 1fr;
-    gap: 20px;
+    gap: 24px;
 }
 
 @media (max-width: 850px) {
@@ -118,14 +165,22 @@ header {
     }
 }
 
-/* Tarjetas */
+/* Tarjetas con Efecto Hover Moderno (Elevación + Borde Interactivo) */
 .card {
     background-color: var(--linkedin-card-bg);
     border: 1px solid var(--linkedin-border);
-    border-radius: 8px;
-    padding: 20px;
+    border-radius: 10px;
+    padding: 22px;
     margin-bottom: 20px;
-    box-shadow: 0 0 0 1px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.05);
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-smooth);
+    position: relative;
+}
+
+.card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(10, 102, 194, 0.3);
 }
 
 .hero-card {
@@ -135,20 +190,44 @@ header {
 
 .card-header {
     border-bottom: 1px solid var(--linkedin-border);
-    padding-bottom: 10px;
-    margin-bottom: 14px;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+    transition: border-color 0.3s ease;
 }
 
+.card:hover .card-header {
+    border-color: #cbd5e1;
+}
+
+/* Títulos con Efecto Hover */
 .card-title {
     font-size: 18px;
     font-weight: 600;
     color: var(--linkedin-text-primary);
+    transition: color 0.2s ease;
+}
+
+.card:hover .card-title {
+    color: var(--linkedin-blue);
 }
 
 .card-subtitle {
-    font-size: 12px;
+    font-size: 13px;
     color: var(--linkedin-text-secondary);
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+}
+
+/* Textos e Interacción Visual */
+p.text-interactive {
+    transition: color 0.2s ease, background-color 0.2s ease;
+    border-radius: 4px;
+    padding: 2px 4px;
+    margin: -2px -4px;
+}
+
+p.text-interactive:hover {
+    background-color: #f8fafc;
+    color: #000000;
 }
 
 .section-text {
@@ -160,38 +239,60 @@ header {
     color: var(--linkedin-text-secondary);
 }
 
-/* Portada / Hero */
+/* Portada / Hero e Imagen con Zoom Fluido */
 .hero-banner {
-    background: linear-gradient(135deg, #0a66c2 0%, #004182 100%);
+    background: linear-gradient(135deg, #0a66c2 0%, #003366 100%);
     color: white;
-    border-radius: 8px 8px 0 0;
-    padding: 30px 20px;
+    padding: 36px 24px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .hero-banner h1 {
     font-size: 28px;
+    font-weight: 700;
     margin-bottom: 8px;
+    letter-spacing: -0.02em;
+}
+
+.hero-img-wrapper {
+    overflow: hidden;
+    max-height: 280px;
 }
 
 .hero-img {
     width: 100%;
-    max-height: 280px;
+    height: 100%;
     object-fit: cover;
-    border-radius: 0 0 8px 8px;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Badges e Insignias */
+.hero-card:hover .hero-img {
+    transform: scale(1.04);
+}
+
+/* Badges e Insignias con Animación Hover */
 .badge {
     display: inline-block;
-    background-color: #e8f0fe;
+    background-color: var(--linkedin-light-blue);
     color: var(--linkedin-blue);
-    padding: 4px 10px;
-    border-radius: 12px;
+    padding: 6px 12px;
+    border-radius: 16px;
     font-size: 12px;
     font-weight: 600;
     margin-right: 6px;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
+    transition: var(--transition-smooth);
+    cursor: default;
+}
+
+.badge:hover {
+    background-color: var(--linkedin-blue);
+    color: white;
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 4px 8px rgba(10, 102, 194, 0.2);
 }
 
 .badge-ods {
@@ -199,7 +300,13 @@ header {
     color: var(--linkedin-green);
 }
 
-/* Listas */
+.badge-ods:hover {
+    background-color: var(--linkedin-green);
+    color: white;
+    box-shadow: 0 4px 8px rgba(5, 118, 66, 0.2);
+}
+
+/* Listas con Animación al Pasar el Cursor */
 ul.list-styled {
     list-style: none;
     padding-left: 0;
@@ -207,58 +314,100 @@ ul.list-styled {
 
 ul.list-styled li {
     position: relative;
-    padding-left: 22px;
-    margin-bottom: 10px;
+    padding-left: 24px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin-bottom: 8px;
     font-size: 14px;
+    border-radius: 6px;
+    transition: var(--transition-smooth);
 }
 
 ul.list-styled li::before {
     content: "•";
     color: var(--linkedin-blue);
     font-weight: bold;
-    font-size: 20px;
+    font-size: 22px;
     position: absolute;
-    left: 4px;
-    top: -3px;
+    left: 6px;
+    top: -1px;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+ul.list-styled li:hover {
+    background-color: rgba(10, 102, 194, 0.04);
+    padding-left: 28px;
+}
+
+ul.list-styled li:hover::before {
+    transform: scale(1.3);
+    color: var(--linkedin-hover-blue);
 }
 
 .list-margin {
-    margin-top: 8px;
+    margin-top: 10px;
 }
 
-/* Tablas */
+/* Tablas Interactivas con Hover por Fila */
+.table-wrapper {
+    overflow-x: auto;
+    border-radius: 8px;
+    border: 1px solid var(--linkedin-border);
+    margin-top: 12px;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 12px;
-    font-size: 13px;
+    font-size: 13.5px;
+    background-color: white;
 }
 
 th, td {
-    border: 1px solid var(--linkedin-border);
-    padding: 10px;
+    padding: 12px 14px;
     text-align: left;
+    border-bottom: 1px solid var(--linkedin-border);
+    transition: background-color 0.2s ease;
 }
 
 th {
-    background-color: #f8f9fa;
+    background-color: #f8fafc;
     font-weight: 600;
+    color: var(--linkedin-text-primary);
 }
 
-/* Media & Galería */
+tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover td {
+    background-color: #f1f5f9;
+}
+
+/* Media, Galería y Videos con Hover */
 .media-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
     margin-top: 12px;
 }
 
-.media-grid img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 6px;
+.img-wrapper {
+    overflow: hidden;
+    border-radius: 8px;
     border: 1px solid var(--linkedin-border);
+    height: 160px;
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.img-wrapper:hover img {
+    transform: scale(1.08);
 }
 
 .video-container {
@@ -268,6 +417,12 @@ th {
     overflow: hidden;
     border-radius: 8px;
     margin-top: 12px;
+    border: 1px solid var(--linkedin-border);
+    transition: var(--transition-smooth);
+}
+
+.video-container:hover {
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
 }
 
 .video-container iframe {
@@ -279,25 +434,38 @@ th {
     border: 0;
 }
 
-/* Equipo */
+/* Tarjetas de Integrantes del Equipo */
 .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 12px;
+    gap: 14px;
     margin-top: 12px;
 }
 
 .team-member {
     border: 1px solid var(--linkedin-border);
-    border-radius: 6px;
-    padding: 12px;
+    border-radius: 8px;
+    padding: 16px 12px;
     text-align: center;
     background-color: #fafafa;
+    transition: var(--transition-smooth);
+}
+
+.team-member:hover {
+    background-color: #ffffff;
+    border-color: var(--linkedin-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(10, 102, 194, 0.1);
 }
 
 .team-member h4 {
-    font-size: 14px;
+    font-size: 15px;
     color: var(--linkedin-text-primary);
+    transition: color 0.2s ease;
+}
+
+.team-member:hover h4 {
+    color: var(--linkedin-blue);
 }
 
 .team-member p {
@@ -305,19 +473,19 @@ th {
     color: var(--linkedin-text-secondary);
 }
 
-/* Botones de Enlace */
+/* Botones de Enlace con Transiciones y Efecto Sombra Elevada */
 .btn-link {
     display: block;
     width: 100%;
     text-align: center;
     color: white;
-    padding: 8px 16px;
-    border-radius: 16px;
+    padding: 10px 16px;
+    border-radius: 20px;
     text-decoration: none;
-    font-size: 13px;
+    font-size: 13.5px;
     font-weight: 600;
-    margin-top: 8px;
-    transition: background-color 0.2s;
+    margin-top: 10px;
+    transition: var(--transition-smooth);
 }
 
 .btn-github {
@@ -326,6 +494,8 @@ th {
 
 .btn-github:hover {
     background-color: var(--linkedin-hover-blue);
+    box-shadow: 0 4px 12px rgba(10, 102, 194, 0.3);
+    transform: translateY(-2px);
 }
 
 .btn-pages {
@@ -333,5 +503,11 @@ th {
 }
 
 .btn-pages:hover {
-    background-color: #034e2b;
+    background-color: var(--linkedin-green-hover);
+    box-shadow: 0 4px 12px rgba(5, 118, 66, 0.3);
+    transform: translateY(-2px);
+}
+
+.btn-link:active {
+    transform: translateY(0);
 }
