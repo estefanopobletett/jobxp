@@ -13,7 +13,9 @@
     --shadow-hover: 0 12px 24px -6px rgba(10, 102, 194, 0.12), 0 4px 12px rgba(0,0,0,0.08);
     --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-
+html {
+    scroll-behavior: smooth;
+}
 * {
     box-sizing: border-box;
     margin: 0;
@@ -42,15 +44,26 @@ header:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
+/* Asegurar que la barra mantenga una altura limpia y centrada */
 .nav-container {
-    max-width: 1128px;
-    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    height: 56px;
+    justify-content: space-between;
+    height: 90px; /* Aumentamos el alto total de la barra */
+    padding: 0 25px;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.logo img {
+    height: 75px;  /* Le damos una altura fija bastante más grande */
+    width: auto;   /* Mantiene la proporción sin deformarse */
+    object-fit: contain;
+}
 /* Logo con Micro-animación */
 .logo-area {
     display: flex;
