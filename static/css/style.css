@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
+
 :root {
     --linkedin-blue: #0a66c2;
     --linkedin-hover-blue: #004182;
@@ -13,14 +15,16 @@
     --shadow-hover: 0 12px 24px -6px rgba(10, 102, 194, 0.12), 0 4px 12px rgba(0,0,0,0.08);
     --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
+
 html {
     scroll-behavior: smooth;
 }
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 body {
@@ -29,7 +33,11 @@ body {
     line-height: 1.6;
 }
 
-/* Header Sticky con Sombra Elevada en Hover */
+h1, h2, h3, h4, .card-title, .brand-name, .nav-item a {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.01em;
+}
+
 header {
     background-color: var(--linkedin-card-bg);
     border-bottom: 1px solid var(--linkedin-border);
@@ -44,12 +52,11 @@ header:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-/* Asegurar que la barra mantenga una altura limpia y centrada */
 .nav-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 90px; /* Aumentamos el alto total de la barra */
+    height: 90px;
     padding: 0 25px;
 }
 
@@ -60,11 +67,11 @@ header:hover {
 }
 
 .logo img {
-    height: 75px;  /* Le damos una altura fija bastante más grande */
-    width: auto;   /* Mantiene la proporción sin deformarse */
+    height: 75px;
+    width: auto;
     object-fit: contain;
 }
-/* Logo con Micro-animación */
+
 .logo-area {
     display: flex;
     align-items: center;
@@ -98,7 +105,6 @@ header:hover {
     color: var(--linkedin-blue);
 }
 
-/* Menú de Navegación con Hover de Línea Inferior Animada */
 .nav-menu {
     display: flex;
     gap: 20px;
@@ -110,7 +116,7 @@ header:hover {
     text-decoration: none;
     color: var(--linkedin-text-secondary);
     font-size: 13.5px;
-    font-weight: 500;
+    font-weight: 600;
     position: relative;
     padding: 6px 0;
     transition: color 0.2s ease;
@@ -135,7 +141,6 @@ header:hover {
     width: 100%;
 }
 
-/* Botón de Idioma Dinámico Moderno */
 .lang-btn {
     background-color: transparent;
     border: 1.5px solid var(--linkedin-blue);
@@ -159,7 +164,6 @@ header:hover {
     transform: translateY(0);
 }
 
-/* Layout Grid Responsive */
 .main-container {
     max-width: 1128px;
     margin: 24px auto;
@@ -178,7 +182,6 @@ header:hover {
     }
 }
 
-/* Tarjetas con Efecto Hover Moderno (Elevación + Borde Interactivo) */
 .card {
     background-color: var(--linkedin-card-bg);
     border: 1px solid var(--linkedin-border);
@@ -212,10 +215,9 @@ header:hover {
     border-color: #cbd5e1;
 }
 
-/* Títulos con Efecto Hover */
 .card-title {
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--linkedin-text-primary);
     transition: color 0.2s ease;
 }
@@ -230,7 +232,6 @@ header:hover {
     margin-bottom: 12px;
 }
 
-/* Textos e Interacción Visual */
 p.text-interactive {
     transition: color 0.2s ease, background-color 0.2s ease;
     border-radius: 4px;
@@ -252,7 +253,6 @@ p.text-interactive:hover {
     color: var(--linkedin-text-secondary);
 }
 
-/* Portada / Hero e Imagen con Zoom Fluido */
 .hero-banner {
     background: linear-gradient(135deg, #0a66c2 0%, #003366 100%);
     color: white;
@@ -264,7 +264,7 @@ p.text-interactive:hover {
 
 .hero-banner h1 {
     font-size: 28px;
-    font-weight: 700;
+    font-weight: 800;
     margin-bottom: 8px;
     letter-spacing: -0.02em;
 }
@@ -286,7 +286,6 @@ p.text-interactive:hover {
     transform: scale(1.04);
 }
 
-/* Badges e Insignias con Animación Hover */
 .badge {
     display: inline-block;
     background-color: var(--linkedin-light-blue);
@@ -319,7 +318,6 @@ p.text-interactive:hover {
     box-shadow: 0 4px 8px rgba(5, 118, 66, 0.2);
 }
 
-/* Listas con Animación al Pasar el Cursor */
 ul.list-styled {
     list-style: none;
     padding-left: 0;
@@ -361,7 +359,6 @@ ul.list-styled li:hover::before {
     margin-top: 10px;
 }
 
-/* Tablas Interactivas con Hover por Fila */
 .table-wrapper {
     overflow-x: auto;
     border-radius: 8px;
@@ -387,6 +384,7 @@ th {
     background-color: #f8fafc;
     font-weight: 600;
     color: var(--linkedin-text-primary);
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 tr:last-child td {
@@ -397,7 +395,6 @@ tbody tr:hover td {
     background-color: #f1f5f9;
 }
 
-/* Media, Galería y Videos con Hover */
 .media-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -447,7 +444,6 @@ tbody tr:hover td {
     border: 0;
 }
 
-/* Tarjetas de Integrantes del Equipo */
 .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -486,7 +482,6 @@ tbody tr:hover td {
     color: var(--linkedin-text-secondary);
 }
 
-/* Botones de Enlace con Transiciones y Efecto Sombra Elevada */
 .btn-link {
     display: block;
     width: 100%;
