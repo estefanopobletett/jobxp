@@ -13,18 +13,28 @@
     <header>
         <div class="nav-container">
             <div class="logo">
-                <img src="static/images/Logo.png" alt="Logo">
+                <img src="static/images/Logo.png" alt="Logo JobXp">
             </div>
 
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="#intro" data-es="Inicio" data-en="Home">Inicio</a></li>
-                <li class="nav-item"><a href="#problem" data-es="Problemática" data-en="Problem">Problemática</a></li>
-                <li class="nav-item"><a href="#ods" data-es="ODS 8" data-en="SDG 8">ODS 8</a></li>
-                <li class="nav-item"><a href="#solution" data-es="Solución" data-en="Solution">Solución</a></li>
-                <li class="nav-item"><a href="#tech" data-es="Tecnologías" data-en="Tech Stack">Tecnologías</a></li>
-                <li class="nav-item"><a href="#team" data-es="Equipo" data-en="Team">Equipo</a></li>
-            </ul>
-            <button class="lang-btn" id="langBtn">EN / English</button>
+            <nav class="nav-menu-wrapper" id="navMenuWrapper">
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#intro" data-es="Inicio" data-en="Home">Inicio</a></li>
+                    <li class="nav-item"><a href="#problem" data-es="Problemática" data-en="Problem">Problemática</a></li>
+                    <li class="nav-item"><a href="#ods" data-es="ODS 8" data-en="SDG 8">ODS 8</a></li>
+                    <li class="nav-item"><a href="#solution" data-es="Solución" data-en="Solution">Solución</a></li>
+                    <li class="nav-item"><a href="#tech" data-es="Tecnologías" data-en="Tech Stack">Tecnologías</a></li>
+                    <li class="nav-item"><a href="#team" data-es="Equipo" data-en="Team">Equipo</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="lang-btn" id="langBtn">EN / English</button>
+                <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -33,8 +43,7 @@
         <aside>
             <div class="card card-hover">
                 <div class="card-header">
-                    <h3 class="card-title" data-es="Enfoque de Inclusión" data-en="Inclusion Focus">Enfoque de Inclusión
-                    </h3>
+                    <h3 class="card-title" data-es="Enfoque de Inclusión" data-en="Inclusion Focus">Enfoque de Inclusión</h3>
                 </div>
                 <span class="badge" data-es="TEA / TDAH" data-en="ASD / ADHD">TEA / TDAH</span>
                 <span class="badge" data-es="Discapacidad Motriz" data-en="Motor Disability">Discapacidad Motriz</span>
@@ -47,109 +56,73 @@
 
             <section class="card hero-card card-hover" id="intro">
                 <div class="hero-banner">
-                    <h1 data-es="JobXp: Microexperiencias Laborales" data-en="JobXp: Work Micro-Experiences">JobXp:
-                        Microexperiencias Laborales</h1>
-                    <p data-es="Plataforma de inclusión asistida y dinamización del primer empleo en Chile"
-                        data-en="Assisted inclusion platform boosting youth first-job opportunities in Chile">Plataforma
-                        de inclusión asistida y dinamización del primer empleo en Chile</p>
+                    <h1 data-es="JobXp: Microexperiencias Laborales" data-en="JobXp: Work Micro-Experiences">JobXp: Microexperiencias Laborales</h1>
+                    <p data-es="Plataforma de inclusión asistida y dinamización del primer empleo en Chile" data-en="Assisted inclusion platform boosting youth first-job opportunities in Chile">Plataforma de inclusión asistida y dinamización del primer empleo en Chile</p>
                 </div>
                 <div class="hero-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80"
-                        alt="JobXp Teamwork" class="hero-img">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80" alt="JobXp Teamwork" class="hero-img">
                 </div>
             </section>
 
             <section class="card card-hover">
                 <div class="card-header">
-                    <h2 class="card-title" data-es=" Resumen Ejecutivo" data-en=" Executive Summary"> Resumen
-                        Ejecutivo</h2>
+                    <h2 class="card-title" data-es=" Resumen Ejecutivo" data-en=" Executive Summary"> Resumen Ejecutivo</h2>
                 </div>
-                <p class="text-interactive"
-                    data-es="JobXp es una solución tecnológica e inclusiva concebida para conectar a jóvenes mayores de 18 años sin experiencia laboral con pequeñas y medianas empresas (PYMEs). Mediante un modelo de microexperiencias laborales certificadas y un pilar de Inclusión Asistida, eliminamos las barreras arquitectónicas, cognitivas y sensoriales en el empleo."
-                    data-en="JobXp is an inclusive tech solution designed to connect young adults (+18) without work experience with small and medium businesses (SMEs). Through a certified work micro-experience model and an Assisted Inclusion pillar, we eliminate architectural, cognitive, and sensory barriers to employment.">
-                    JobXp es una solución tecnológica e inclusiva concebida para conectar a jóvenes mayores de 18 años
-                    sin experiencia laboral con pequeñas y medianas empresas (PYMEs). Mediante un modelo de
-                    microexperiencias laborales certificadas y un pilar de Inclusión Asistida, eliminamos las barreras
-                    arquitectónicas, cognitivas y sensoriales en el empleo.
+                <p class="text-interactive" data-es="JobXp es una solución tecnológica e inclusiva concebida para conectar a jóvenes mayores de 18 años sin experiencia laboral con pequeñas y medianas empresas (PYMEs). Mediante un modelo de microexperiencias laborales certificadas y un pilar de Inclusión Asistida, eliminamos las barreras arquitectónicas, cognitivas y sensoriales en el empleo." data-en="JobXp is an inclusive tech solution designed to connect young adults (+18) without work experience with small and medium businesses (SMEs). Through a certified work micro-experience model and an Assisted Inclusion pillar, we eliminate architectural, cognitive, and sensory barriers to employment.">
+                    JobXp es una solución tecnológica e inclusiva concebida para conectar a jóvenes mayores de 18 años sin experiencia laboral con pequeñas y medianas empresas (PYMEs). Mediante un modelo de microexperiencias laborales certificadas y un pilar de Inclusión Asistida, eliminamos las barreras arquitectónicas, cognitivas y sensoriales en el empleo.
                 </p>
             </section>
 
             <section id="problem" class="card card-hover">
                 <div class="card-header">
-                    <h2 class="card-title" data-es=" Problemática Laboral" data-en=" Labor Problem Breakdown">
-                        Problemática Laboral</h2>
+                    <h2 class="card-title" data-es=" Problemática Laboral" data-en=" Labor Problem Breakdown"> Problemática Laboral</h2>
                 </div>
                 <ul class="list-styled">
-                    <li data-es="<strong>Desempleo Juvenil Elevado:</strong> La tasa de desocupación alcanzó el 9,4 % a nivel nacional y 9,8 % en la Región Metropolitana, afectando severamente a quienes buscan su primer empleo."
-                        data-en="<strong>High Youth Unemployment:</strong> Unemployment reached 9.4% nationally and 9.8% in the Santiago Metropolitan Region, severely impacting first-time job seekers.">
-                        <strong>Desempleo Juvenil Elevado:</strong> La tasa de desocupación alcanzó el 9,4 % a nivel
-                        nacional y 9,8 % en la Región Metropolitana, afectando severamente a quienes buscan su primer
-                        empleo.
+                    <li data-es="<strong>Desempleo Juvenil Elevado:</strong> La tasa de desocupación alcanzó el 9,4 % a nivel nacional y 9,8 % en la Región Metropolitana, afectando severamente a quienes buscan su primer empleo." data-en="<strong>High Youth Unemployment:</strong> Unemployment reached 9.4% nationally and 9.8% in the Santiago Metropolitan Region, severely impacting first-time job seekers.">
+                        <strong>Desempleo Juvenil Elevado:</strong> La tasa de desocupación alcanzó el 9,4 % a nivel nacional y 9,8 % en la Región Metropolitana, afectando severamente a quienes buscan su primer empleo.
                     </li>
-                    <li data-es="<strong>Brecha de Competencias:</strong> Según ENADEL, el 77 % de las empresas de la Región Metropolitana no logra cubrir sus vacantes debido a la falta de experiencia práctica de los postulantes."
-                        data-en="<strong>Skills Gap:</strong> According to ENADEL, 77% of companies in the Metropolitan Region fail to fill vacancies due to applicants' lack of practical experience.">
-                        <strong>Brecha de Competencias:</strong> Según ENADEL, el 77 % de las empresas de la Región
-                        Metropolitana no logra cubrir sus vacantes debido a la falta de experiencia práctica de los
-                        postulantes.
+                    <li data-es="<strong>Brecha de Competencias:</strong> Según ENADEL, el 77 % de las empresas de la Región Metropolitana no logra cubrir sus vacantes debido a la falta de experiencia práctica de los postulantes." data-en="<strong>Skills Gap:</strong> According to ENADEL, 77% of companies in the Metropolitan Region fail to fill vacancies due to applicants' lack of practical experience.">
+                        <strong>Brecha de Competencias:</strong> Según ENADEL, el 77 % de las empresas de la Región Metropolitana no logra cubrir sus vacantes debido a la falta de experiencia práctica de los postulantes.
                     </li>
-                    <li data-es="<strong>Barreras de Inclusión:</strong> Jóvenes neurodivergentes (TEA, TDAH) o con discapacidad física/sensorial carecen de entornos adaptados para integrarse al trabajo formal."
-                        data-en="<strong>Inclusion Barriers:</strong> Neurodivergent youth (ASD, ADHD) or those with physical/sensory disabilities lack adapted environments to enter formal employment.">
-                        <strong>Barreras de Inclusión:</strong> Jóvenes neurodivergentes (TEA, TDAH) o con discapacidad
-                        física/sensorial carecen de entornos adaptados para integrarse al trabajo formal.
+                    <li data-es="<strong>Barreras de Inclusión:</strong> Jóvenes neurodivergentes (TEA, TDAH) o con discapacidad física/sensorial carecen de entornos adaptados para integrarse al trabajo formal." data-en="<strong>Inclusion Barriers:</strong> Neurodivergent youth (ASD, ADHD) or those with physical/sensory disabilities lack adapted environments to enter formal employment.">
+                        <strong>Barreras de Inclusión:</strong> Jóvenes neurodivergentes (TEA, TDAH) o con discapacidad física/sensorial carecen de entornos adaptados para integrarse al trabajo formal.
                     </li>
                 </ul>
             </section>
 
             <section id="ods" class="card card-hover">
                 <div class="card-header">
-                    <h2 class="card-title" data-es=" Alineación con el ODS 8" data-en=" Alignment with SDG 8">
-                        Alineación con el ODS 8</h2>
+                    <h2 class="card-title" data-es=" Alineación con el ODS 8" data-en=" Alignment with SDG 8"> Alineación con el ODS 8</h2>
                 </div>
                 <span class="badge badge-ods">ODS 8: Trabajo Decente y Crecimiento Económico</span>
-                <p class="section-text text-interactive"
-                    data-es="El proyecto contribuye directamente al ODS 8, promoviendo el trabajo decente y reduciendo la proporción de jóvenes sin empleo ni formación. JobXp proporciona entornos de trabajo seguros, no precarizados y formalizados conforme al Código del Trabajo de Chile y la Ley N.º 21.015 de Inclusión Laboral."
-                    data-en="The project directly contributes to SDG 8, promoting decent work and substantially reducing the proportion of youth not in employment or training. JobXp ensures safe, non-precarious, and regulated work environments in compliance with Chilean Labor Code and Inclusion Law No. 21.015.">
-                    El proyecto contribuye directamente al ODS 8, promoviendo el trabajo decente y reduciendo la
-                    proporción de jóvenes sin empleo ni formación. JobXp proporciona entornos de trabajo seguros, no
-                    precarizados y formalizados conforme al Código del Trabajo de Chile y la Ley N.º 21.015 de Inclusión
-                    Laboral.
+                <p class="section-text text-interactive" data-es="El proyecto contribuye directamente al ODS 8, promoviendo el trabajo decente y reduciendo la proporción de jóvenes sin empleo ni formación. JobXp proporciona entornos de trabajo seguros, no precarizados y formalizados conforme al Código del Trabajo de Chile y la Ley N.º 21.015 de Inclusión Laboral." data-en="The project directly contributes to SDG 8, promoting decent work and substantially reducing the proportion of youth not in employment or training. JobXp ensures safe, non-precarious, and regulated work environments in compliance with Chilean Labor Code and Inclusion Law No. 21.015.">
+                    El proyecto contribuye directamente al ODS 8, promoviendo el trabajo decente y reduciendo la proporción de jóvenes sin empleo ni formación. JobXp proporciona entornos de trabajo seguros, no precarizados y formalizados conforme al Código del Trabajo de Chile y la Ley N.º 21.015 de Inclusión Laboral.
                 </p>
             </section>
 
             <section id="solution" class="card card-hover">
                 <div class="card-header">
-                    <h2 class="card-title" data-es=" Solución Tecnológica Propuesta" data-en=" Proposed Tech Solution">
-                        Solución Tecnológica Propuesta</h2>
+                    <h2 class="card-title" data-es=" Solución Tecnológica Propuesta" data-en=" Proposed Tech Solution"> Solución Tecnológica Propuesta</h2>
                 </div>
-                <p class="text-interactive"
-                    data-es="JobXp opera como un ecosistema multiplataforma móvil y web compuesto por tres motores principales:"
-                    data-en="JobXp operates as a multiplatform mobile and web ecosystem powered by three core engines:">
+                <p class="text-interactive" data-es="JobXp opera como un ecosistema multiplataforma móvil y web compuesto por tres motores principales:" data-en="JobXp operates as a multiplatform mobile and web ecosystem powered by three core engines:">
                     JobXp opera como un ecosistema multiplataforma móvil y web compuesto por tres motores principales:
                 </p>
                 <ul class="list-styled list-margin">
-                    <li data-es="<strong>Algoritmo de Match Inclusivo:</strong> Cruza perfiles de usuarios con checklists de accesibilidad obligatorios de las PYMEs (accesibilidad motriz, guías de anticipación visual, bajo estímulo sensorial)."
-                        data-en="<strong>Inclusive Matching Algorithm:</strong> Cross-references user profiles with mandatory SME accessibility checklists (motor accessibility, visual anticipation guides, low sensory stimulation).">
-                        <strong>Algoritmo de Match Inclusivo:</strong> Cruza perfiles de usuarios con checklists de
-                        accesibilidad obligatorios de las PYMEs (accesibilidad motriz, guías de anticipación visual,
-                        bajo estímulo sensorial).
+                    <li data-es="<strong>Algoritmo de Match Inclusivo:</strong> Cruza perfiles de usuarios con checklists de accesibilidad obligatorios de las PYMEs (accesibilidad motriz, guías de anticipación visual, bajo estímulo sensorial)." data-en="<strong>Inclusive Matching Algorithm:</strong> Cross-references user profiles with mandatory SME accessibility checklists (motor accessibility, visual anticipation guides, low sensory stimulation).">
+                        <strong>Algoritmo de Match Inclusivo:</strong> Cruza perfiles de usuarios con checklists de accesibilidad obligatorios de las PYMEs (accesibilidad motriz, guías de anticipación visual, bajo estímulo sensorial).
                     </li>
-                    <li data-es="<strong>Validación IoT y Biometría:</strong> Control de asistencia en tiempo real mediante tótems/códigos QR IoT geolocalizados y verificación facial biométrica para evitar suplantación."
-                        data-en="<strong>IoT & Biometric Validation:</strong> Real-time attendance check using geofenced IoT QR codes and biometric facial recognition to prevent impersonation.">
-                        <strong>Validación IoT y Biometría:</strong> Control de asistencia en tiempo real mediante
-                        tótems/códigos QR IoT geolocalizados y verificación facial biométrica para evitar suplantación.
+                    <li data-es="<strong>Validación IoT y Biometría:</strong> Control de asistencia en tiempo real mediante tótems/códigos QR IoT geolocalizados y verificación facial biométrica para evitar suplantación." data-en="<strong>IoT & Biometric Validation:</strong> Real-time attendance check using geofenced IoT QR codes and biometric facial recognition to prevent impersonation.">
+                        <strong>Validación IoT y Biometría:</strong> Control de asistencia en tiempo real mediante tótems/códigos QR IoT geolocalizados y verificación facial biométrica para evitar suplantación.
                     </li>
-                    <li data-es="<strong>Pasaporte de Experiencia Digital:</strong> Historial unificado de microexperiencias finalizadas para potenciar el currículum del usuario."
-                        data-en="<strong>Digital Experience Passport:</strong> Unified history of completed micro-experiences to boost the user's resume.">
-                        <strong>Pasaporte de Experiencia Digital:</strong> Historial unificado de microexperiencias
-                        finalizadas para potenciar el currículum del usuario.
+                    <li data-es="<strong>Pasaporte de Experiencia Digital:</strong> Historial unificado de microexperiencias finalizadas para potenciar el currículum del usuario." data-en="<strong>Digital Experience Passport:</strong> Unified history of completed micro-experiences to boost the user's resume.">
+                        <strong>Pasaporte de Experiencia Digital:</strong> Historial unificado de microexperiencias finalizadas para potenciar el currículum del usuario.
                     </li>
                 </ul>
             </section>
 
             <section id="tech" class="card card-hover">
                 <div class="card-header">
-                    <h2 class="card-title" data-es=" Tecnologías Utilizadas" data-en=" Tech Stack Overview">
-                        Tecnologías Utilizadas</h2>
+                    <h2 class="card-title" data-es=" Tecnologías Utilizadas" data-en=" Tech Stack Overview"> Tecnologías Utilizadas</h2>
                 </div>
                 <div class="table-wrapper">
                     <table>
@@ -157,38 +130,29 @@
                             <tr>
                                 <th data-es="Capa" data-en="Layer">Capa</th>
                                 <th data-es="Tecnología" data-en="Technology">Tecnología</th>
-                                <th data-es="Aplicación en JobXp" data-en="Application in JobXp">Aplicación en JobXp
-                                </th>
+                                <th data-es="Aplicación en JobXp" data-en="Application in JobXp">Aplicación en JobXp</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td data-es="Estructura" data-en="Structure">Estructura</td>
                                 <td><strong>HTML5</strong></td>
-                                <td data-es="Se utilizó para construir la estructura y organizar el contenido de todas las páginas del sitio web."
-                                    data-en="Used to build the structure and organize the content of every page on the website.">
-                                    Se utilizó para construir la estructura y organizar el contenido de todas las
-                                    páginas del sitio web.
+                                <td data-es="Se utilizó para construir la estructura y organizar el contenido de todas las páginas del sitio web." data-en="Used to build the structure and organize the content of every page on the website.">
+                                    Se utilizó para construir la estructura y organizar el contenido de todas las páginas del sitio web.
                                 </td>
                             </tr>
-
                             <tr>
                                 <td data-es="Diseño" data-en="Design">Diseño</td>
                                 <td><strong>CSS3</strong></td>
-                                <td data-es="Se utilizó para crear el diseño visual, los colores, las animaciones, la distribución de los elementos y adaptar la página a distintos dispositivos."
-                                    data-en="Used to create the visual design, colors, animations, layout, and make the website responsive for different devices.">
-                                    Se utilizó para crear el diseño visual, los colores, las animaciones, la
-                                    distribución de los elementos y adaptar la página a distintos dispositivos.
+                                <td data-es="Se utilizó para crear el diseño visual, los colores, las animaciones, la distribución de los elementos y adaptar la página a distintos dispositivos." data-en="Used to create the visual design, colors, animations, layout, and make the website responsive for different devices.">
+                                    Se utilizó para crear el diseño visual, los colores, las animaciones, la distribución de los elementos y adaptar la página a distintos dispositivos.
                                 </td>
                             </tr>
-
                             <tr>
                                 <td data-es="Interactividad" data-en="Interactivity">Interactividad</td>
                                 <td><strong>JavaScript</strong></td>
-                                <td data-es="Se utilizó para agregar interactividad a la página, como el cambio dinámico de idioma entre español e inglés y mejorar la experiencia del usuario."
-                                    data-en="Used to add interactivity to the website, such as dynamically switching between Spanish and English and improving the user experience.">
-                                    Se utilizó para agregar interactividad a la página, como el cambio dinámico de
-                                    idioma entre español e inglés y mejorar la experiencia del usuario.
+                                <td data-es="Se utilizó para agregar interactividad a la página, como el cambio dinámico de idioma entre español e inglés y mejorar la experiencia del usuario." data-en="Used to add interactivity to the website, such as dynamically switching between Spanish and English and improving the user experience.">
+                                    Se utilizó para agregar interactividad a la página, como el cambio dinámico de idioma entre español e inglés y mejorar la experiencia del usuario.
                                 </td>
                             </tr>
                         </tbody>
@@ -198,113 +162,70 @@
 
             <section id="team" class="card card-hover">
                 <div class="card-header">
-                    <h2 class="card-title" data-es="Equipo y Roles" data-en="Team and Roles">
-                        Equipo y Roles
-                    </h2>
+                    <h2 class="card-title" data-es="Equipo y Roles" data-en="Team and Roles">Equipo y Roles</h2>
                 </div>
 
                 <div class="team-grid">
-
                     <div class="team-member">
                         <h4>Ignacio</h4>
-                        <p data-es="Líder, supervisor y desarrollo general."
-                            data-en="Leader, supervisor and general development.">
-                            Líder, supervisor y desarrollo general.
-                        </p>
+                        <p data-es="Líder, supervisor y desarrollo general." data-en="Leader, supervisor and general development.">Líder, supervisor y desarrollo general.</p>
                     </div>
-
                     <div class="team-member">
                         <h4>Estefano</h4>
-                        <p data-es="Desarrollador Web (HTML, CSS y JavaScript)."
-                            data-en="Web Developer (HTML, CSS and JavaScript).">
-                            Desarrollador Web (HTML, CSS y JavaScript).
-                        </p>
+                        <p data-es="Desarrollador Web (HTML, CSS y JavaScript)." data-en="Web Developer (HTML, CSS and JavaScript).">Desarrollador Web (HTML, CSS y JavaScript).</p>
                     </div>
-
                     <div class="team-member">
                         <h4>Benjamin</h4>
-                        <p data-es="Planificación de la presentación y PowerPoint."
-                            data-en="Presentation planning and PowerPoint.">
-                            Planificación de la presentación y PowerPoint.
-                        </p>
+                        <p data-es="Planificación de la presentación y PowerPoint." data-en="Presentation planning and PowerPoint.">Planificación de la presentación y PowerPoint.</p>
                     </div>
-
                     <div class="team-member">
                         <h4>Alan</h4>
-                        <p data-es="Planificación de la presentación y PowerPoint."
-                            data-en="Presentation planning and PowerPoint.">
-                            Planificación de la presentación y PowerPoint.
-                        </p>
+                        <p data-es="Planificación de la presentación y PowerPoint." data-en="Presentation planning and PowerPoint.">Planificación de la presentación y PowerPoint.</p>
                     </div>
-
                     <div class="team-member">
                         <h4>Matias</h4>
-                        <p data-es="Planificación de la presentación y PowerPoint."
-                            data-en="Presentation planning and PowerPoint.">
-                            Planificación de la presentación y PowerPoint.
-                        </p>
+                        <p data-es="Planificación de la presentación y PowerPoint." data-en="Presentation planning and PowerPoint.">Planificación de la presentación y PowerPoint.</p>
                     </div>
-
                 </div>
             </section>
 
             <section class="card card-hover">
                 <div class="card-header">
-                    <h2 class="card-title" data-es=" Solución Final JobXp" data-en=" JobXp Final Solution">
-                        Solución Final JobXp</h2>
+                    <h2 class="card-title" data-es=" Solución Final JobXp" data-en=" JobXp Final Solution"> Solución Final JobXp</h2>
                 </div>
-                <p class="text-interactive"
-                    data-es="La solución es una <strong>página web de microexperiencias laborales</strong> que actúa como un puente seguro, transparente y regulado entre jóvenes sin experiencia y el ecosistema de negocios locales. La plataforma cuenta con un pilar transversal de <strong>&quot;Inclusión Asistida&quot;</strong>, diseñado para eliminar barreras arquitectónicas, sensoriales, cognitivas y de comunicación."
-                    data-en="The solution is a <strong>web platform for work micro-experiences</strong> that acts as a safe, transparent, and regulated bridge between youth without experience and the local business ecosystem. The platform features a cross-cutting <strong>&quot;Assisted Inclusion&quot;</strong> pillar, designed to eliminate architectural, sensory, cognitive, and communication barriers.">
-                    La solución es una <strong>página web de microexperiencias laborales</strong> que actúa como un
-                    puente seguro, transparente y regulado entre jóvenes sin experiencia y el ecosistema de negocios
-                    locales. La plataforma cuenta con un pilar transversal de <strong>"Inclusión Asistida"</strong>,
-                    diseñado para eliminar barreras arquitectónicas, sensoriales, cognitivas y de comunicación.
+                <p class="text-interactive" data-es="La solución es una <strong>página web de microexperiencias laborales</strong> que actúa como un puente seguro, transparente y regulado entre jóvenes sin experiencia y el ecosistema de negocios locales. La plataforma cuenta con un pilar transversal de <strong>&quot;Inclusión Asistida&quot;</strong>, diseñado para eliminar barreras arquitectónicas, sensoriales, cognitivas y de comunicación." data-en="The solution is a <strong>web platform for work micro-experiences</strong> that acts as a safe, transparent, and regulated bridge between youth without experience and the local business ecosystem. The platform features a cross-cutting <strong>&quot;Assisted Inclusion&quot;</strong> pillar, designed to eliminate architectural, sensory, cognitive, and communication barriers.">
+                    La solución es una <strong>página web de microexperiencias laborales</strong> que actúa como un puente seguro, transparente y regulado entre jóvenes sin experiencia y el ecosistema de negocios locales. La plataforma cuenta con un pilar transversal de <strong>"Inclusión Asistida"</strong>, diseñado para eliminar barreras arquitectónicas, sensoriales, cognitivas y de comunicación.
                 </p>
             </section>
 
             <section class="card card-hover">
                 <div class="card-header">
-                    <h2 class="card-title" data-es=" Galería y Prototipos" data-en=" Gallery & Prototypes">
-                        Galería y Prototipos</h2>
+                    <h2 class="card-title" data-es=" Galería y Prototipos" data-en=" Gallery & Prototypes"> Galería y Prototipos</h2>
                 </div>
                 <div class="media-grid">
-                    <div class="img-wrapper"><img
-                            src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=500&q=80"
-                            alt="Interface UI"></div>
-                    <div class="img-wrapper"><img
-                            src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=500&q=80"
-                            alt="IoT ESP32 Testing"></div>
-                    <div class="img-wrapper"><img
-                            src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=500&q=80"
-                            alt="Inclusion Workshop"></div>
+                    <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=500&q=80" alt="Interface UI"></div>
+                    <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=500&q=80" alt="IoT ESP32 Testing"></div>
+                    <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=500&q=80" alt="Inclusion Workshop"></div>
                 </div>
             </section>
-
 
         </main>
     </div>
 
-    <script src="static/js/script.js"></script>
     <footer class="footer">
-
         <div class="footer-container">
-
             <div class="footer-brand">
-                <img src="static/images/Logo.png" alt="LabXP">
+                <img src="static/images/Logo.png" alt="JobXP">
                 <h3>JobXP</h3>
-                <p>
-                    Conectando talento, empresas y oportunidades laborales de forma
-                    inclusiva.
-                </p>
+                <p>Conectando talento, empresas y oportunidades laborales de forma inclusiva.</p>
             </div>
-
-
         </div>
-
         <div class="footer-bottom">
             <p>© 2026 JobXP. Todos los derechos reservados.</p>
         </div>
-
     </footer>
+
+    <script src="static/js/script.js"></script>
 </body>
+
+</html>

@@ -31,6 +31,7 @@ body {
     background-color: var(--linkedin-bg);
     color: var(--linkedin-text-primary);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4, .card-title, .brand-name, .nav-item a {
@@ -38,13 +39,14 @@ h1, h2, h3, h4, .card-title, .brand-name, .nav-item a {
     letter-spacing: -0.01em;
 }
 
+/* HEADER & NAVIGATION */
 header {
     background-color: var(--linkedin-card-bg);
     border-bottom: 1px solid var(--linkedin-border);
     position: sticky;
     top: 0;
     z-index: 100;
-    padding: 0 16px;
+    width: 100%;
     transition: var(--transition-smooth);
 }
 
@@ -56,8 +58,11 @@ header:hover {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 90px;
-    padding: 0 25px;
+    height: 70px;
+    padding: 0 20px;
+    max-width: 1128px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .logo {
@@ -67,42 +72,14 @@ header:hover {
 }
 
 .logo img {
-    height: 75px;
+    height: 48px;
     width: auto;
     object-fit: contain;
 }
 
-.logo-area {
+.nav-menu-wrapper {
     display: flex;
     align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    transition: var(--transition-smooth);
-}
-
-.logo-area:hover {
-    transform: scale(1.03);
-}
-
-.logo-box {
-    background-color: var(--linkedin-blue);
-    color: white;
-    font-weight: bold;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 18px;
-    transition: var(--transition-smooth);
-}
-
-.logo-area:hover .logo-box {
-    background-color: var(--linkedin-hover-blue);
-    box-shadow: 0 2px 8px rgba(10, 102, 194, 0.3);
-}
-
-.brand-name {
-    font-size: 20px;
-    font-weight: bold;
-    color: var(--linkedin-blue);
 }
 
 .nav-menu {
@@ -141,6 +118,12 @@ header:hover {
     width: 100%;
 }
 
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
 .lang-btn {
     background-color: transparent;
     border: 1.5px solid var(--linkedin-blue);
@@ -150,6 +133,7 @@ header:hover {
     font-weight: 600;
     font-size: 13px;
     cursor: pointer;
+    white-space: nowrap;
     transition: var(--transition-smooth);
 }
 
@@ -160,10 +144,41 @@ header:hover {
     transform: translateY(-1px);
 }
 
-.lang-btn:active {
-    transform: translateY(0);
+/* BOTÓN HAMBURGUESA */
+.hamburger-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 28px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 101;
 }
 
+.hamburger-btn span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--linkedin-text-primary);
+    border-radius: 2px;
+    transition: var(--transition-smooth);
+}
+
+.hamburger-btn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+}
+
+.hamburger-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-btn.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+}
+
+/* LAYOUT PRINCIPAL Y TARJETAS */
 .main-container {
     max-width: 1128px;
     margin: 24px auto;
@@ -171,15 +186,6 @@ header:hover {
     display: grid;
     grid-template-columns: 260px 1fr;
     gap: 24px;
-}
-
-@media (max-width: 850px) {
-    .main-container {
-        grid-template-columns: 1fr;
-    }
-    .nav-menu {
-        display: none;
-    }
 }
 
 .card {
@@ -226,12 +232,6 @@ header:hover {
     color: var(--linkedin-blue);
 }
 
-.card-subtitle {
-    font-size: 13px;
-    color: var(--linkedin-text-secondary);
-    margin-bottom: 12px;
-}
-
 p.text-interactive {
     transition: color 0.2s ease, background-color 0.2s ease;
     border-radius: 4px;
@@ -248,18 +248,12 @@ p.text-interactive:hover {
     margin-top: 10px;
 }
 
-.section-subtitle {
-    font-size: 13px;
-    color: var(--linkedin-text-secondary);
-}
-
+/* HERO SECTION */
 .hero-banner {
     background: linear-gradient(135deg, #0a66c2 0%, #003366 100%);
     color: white;
     padding: 36px 24px;
     text-align: center;
-    position: relative;
-    overflow: hidden;
 }
 
 .hero-banner h1 {
@@ -286,6 +280,7 @@ p.text-interactive:hover {
     transform: scale(1.04);
 }
 
+/* BADGES */
 .badge {
     display: inline-block;
     background-color: var(--linkedin-light-blue);
@@ -297,7 +292,6 @@ p.text-interactive:hover {
     margin-right: 6px;
     margin-bottom: 8px;
     transition: var(--transition-smooth);
-    cursor: default;
 }
 
 .badge:hover {
@@ -318,6 +312,7 @@ p.text-interactive:hover {
     box-shadow: 0 4px 8px rgba(5, 118, 66, 0.2);
 }
 
+/* LISTAS Y TABLAS */
 ul.list-styled {
     list-style: none;
     padding-left: 0;
@@ -342,17 +337,11 @@ ul.list-styled li::before {
     position: absolute;
     left: 6px;
     top: -1px;
-    transition: transform 0.2s ease, color 0.2s ease;
 }
 
 ul.list-styled li:hover {
     background-color: rgba(10, 102, 194, 0.04);
     padding-left: 28px;
-}
-
-ul.list-styled li:hover::before {
-    transform: scale(1.3);
-    color: var(--linkedin-hover-blue);
 }
 
 .list-margin {
@@ -377,7 +366,6 @@ th, td {
     padding: 12px 14px;
     text-align: left;
     border-bottom: 1px solid var(--linkedin-border);
-    transition: background-color 0.2s ease;
 }
 
 th {
@@ -387,14 +375,11 @@ th {
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-tr:last-child td {
-    border-bottom: none;
-}
-
 tbody tr:hover td {
     background-color: #f1f5f9;
 }
 
+/* EQUIPO Y GALERÍA */
 .media-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -418,30 +403,6 @@ tbody tr:hover td {
 
 .img-wrapper:hover img {
     transform: scale(1.08);
-}
-
-.video-container {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    border-radius: 8px;
-    margin-top: 12px;
-    border: 1px solid var(--linkedin-border);
-    transition: var(--transition-smooth);
-}
-
-.video-container:hover {
-    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-}
-
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
 }
 
 .team-grid {
@@ -470,11 +431,6 @@ tbody tr:hover td {
 .team-member h4 {
     font-size: 15px;
     color: var(--linkedin-text-primary);
-    transition: color 0.2s ease;
-}
-
-.team-member:hover h4 {
-    color: var(--linkedin-blue);
 }
 
 .team-member p {
@@ -482,133 +438,110 @@ tbody tr:hover td {
     color: var(--linkedin-text-secondary);
 }
 
-.btn-link {
-    display: block;
-    width: 100%;
+/* FOOTER */
+.footer {
+    background: #111827;
+    color: #fff;
+    margin-top: 80px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.footer-brand img {
+    width: 60px;
+    margin-bottom: 12px;
+}
+
+.footer-brand h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+.footer-brand p {
+    color: #cbd5e1;
+    line-height: 1.6;
+    max-width: 350px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.1);
     text-align: center;
-    color: white;
-    padding: 10px 16px;
-    border-radius: 20px;
-    text-decoration: none;
-    font-size: 13.5px;
-    font-weight: 600;
-    margin-top: 10px;
-    transition: var(--transition-smooth);
+    padding: 20px;
+    color: #94a3b8;
+    font-size: .9rem;
 }
 
-.btn-github {
-    background-color: var(--linkedin-blue);
-}
-
-.btn-github:hover {
-    background-color: var(--linkedin-hover-blue);
-    box-shadow: 0 4px 12px rgba(10, 102, 194, 0.3);
-    transform: translateY(-2px);
-}
-
-.btn-pages {
-    background-color: var(--linkedin-green);
-}
-
-.btn-pages:hover {
-    background-color: var(--linkedin-green-hover);
-    box-shadow: 0 4px 12px rgba(5, 118, 66, 0.3);
-    transform: translateY(-2px);
-}
-
-.btn-link:active {
-    transform: translateY(0);
-}
-
-.footer{
-    background:#111827;
-    color:#fff;
-    margin-top:80px;
-}
-
-.footer-container{
-    max-width:1200px;
-    margin:auto;
-    padding:60px 30px;
-    display:flex;
-    justify-content:space-between;
-    gap:60px;
-    flex-wrap:wrap;
-}
-
-.footer-brand{
-    flex:1;
-    min-width:260px;
-}
-
-.footer-brand img{
-    width:70px;
-    margin-bottom:15px;
-}
-
-.footer-brand h3{
-    font-size:1.8rem;
-    margin-bottom:15px;
-}
-
-.footer-brand p{
-    color:#cbd5e1;
-    line-height:1.7;
-    max-width:350px;
-}
-
-.footer-links{
-    flex:2;
-    display:flex;
-    justify-content:space-around;
-    flex-wrap:wrap;
-    gap:40px;
-}
-
-.footer-column{
-    display:flex;
-    flex-direction:column;
-}
-
-.footer-column h4{
-    margin-bottom:20px;
-    color:#ffffff;
-}
-
-.footer-column a{
-    text-decoration:none;
-    color:#cbd5e1;
-    margin:8px 0;
-    transition:.3s;
-}
-
-.footer-column a:hover{
-    color:#3b82f6;
-    transform:translateX(6px);
-}
-
-.footer-bottom{
-    border-top:1px solid rgba(255,255,255,.1);
-    text-align:center;
-    padding:20px;
-    color:#94a3b8;
-    font-size:.95rem;
-}
-
-@media(max-width:768px){
-
-    .footer-container{
-        flex-direction:column;
-        text-align:center;
+/* MEDIA QUERIES (DISPOSITIVOS MÓVILES) */
+@media (max-width: 850px) {
+    .nav-container {
+        padding: 0 16px;
+        height: 64px;
     }
 
-    .footer-brand p{
-        margin:auto;
+    .logo img {
+        height: 38px;
     }
 
-    .footer-links{
-        flex-direction:column;
-        align-items:center;
+    .hamburger-btn {
+        display: flex;
     }
 
+    .nav-menu-wrapper {
+        position: absolute;
+        top: 64px;
+        left: 0;
+        width: 100%;
+        background-color: var(--linkedin-card-bg);
+        border-bottom: 1px solid var(--linkedin-border);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        display: none;
+        padding: 20px;
+    }
+
+    .nav-menu-wrapper.active {
+        display: block;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .nav-item {
+        width: 100%;
+    }
+
+    .nav-item a {
+        display: block;
+        width: 100%;
+        font-size: 15px;
+    }
+
+    .main-container {
+        grid-template-columns: 1fr;
+        padding: 0 12px;
+        margin: 16px auto;
+    }
+
+    .hero-banner {
+        padding: 24px 16px;
+    }
+
+    .hero-banner h1 {
+        font-size: 22px;
+    }
+
+    .lang-btn {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
 }
