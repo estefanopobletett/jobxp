@@ -1,2 +1,2 @@
-# jobxp
-JOBXP sitio infromativo
+# JobXp
+Sitio web de presentación de JobXp.
